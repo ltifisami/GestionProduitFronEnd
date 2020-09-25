@@ -1,0 +1,22 @@
+<div *ngIf="currentProduct">
+    <div class="panel-heading"><label>Nom du Produit : </label> {{currentProduct.name}}
+    </div>
+      <div class="panel-body">
+        <div class="col-md-7">
+          <div class="panel panel-default" style="min-height: 300px">
+            <div class="panel-body">
+              <label> Code :</label> {{currentProduct.code}}
+              </div>
+            <div class="panel-body">
+              <label>Prix : </label> {{currentProduct.price|number:'0.00'}}
+            </div>
+            <div class="panel-body">
+              <label> Date de validité :</label> {{currentProduct.validityDate | date }}
+            </div>
+            
+          </div>
+        </div>
+        </div>
+    </div>
+  
+  

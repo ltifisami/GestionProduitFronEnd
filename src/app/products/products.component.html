@@ -1,0 +1,24 @@
+
+<div *ngIf="products">
+    
+    <div *ngFor="let p of products._embedded.product">
+
+      <div class="col-md-4">
+      <div class="panel panel-default heigted">
+        <div class="panel-heading"> <label> Nom du Produit : </label>{{p.name}}</div>
+        <div class="panel-body">
+          <div>
+            <label> Code : </label> {{p.code}}
+          </div>
+          <div>
+            <label>Prix :</label> {{p.price|number:'0.00'}}
+          </div>
+          <div>
+            <label> Date de Validité  : </label>{{p.validityDate | date}}
+           </div>
+        </div>
+
+      </div>
+      </div>
+    </div>
+  </div>

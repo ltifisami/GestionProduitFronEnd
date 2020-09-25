@@ -1,0 +1,36 @@
+<div class="container">
+       <form (ngSubmit)="onSubmit(searchForm)" #searchForm="ngForm" class="panel-body">
+              <label>Rechercher un Produit ...</label>  
+              <br>
+              <select name="selectedValue"  ngModel required #selectedValue="ngModel"  >
+                     <option value="" disabled  > -- Select -- </option>
+                     <option value="Name">Par Nom
+                     <option value="Code">Par Code
+              </select>
+              &nbsp;
+              <input type="text" id="descProd" name="descProd" ngModel #descProd="ngModel">
+              &nbsp;
+       <button  type="submit" class="btn btn-primary btn-sm" >Search...</button> 
+       </form>
+ </div>
+
+ <div *ngIf="produit">
+       <div class="panel-heading"><label>Nom du Produit : </label> {{produit.name}}
+       </div>
+         <div class="panel-body">
+           <div class="col-md-7">
+             <div class="panel panel-default" style="min-height: 300px">
+               <div class="panel-body">
+                 <label> Code :</label> {{produit.code}}
+                 </div>
+               <div class="panel-body">
+                 <label>Prix : </label> {{produit.price|number:'0.00'}}
+               </div>
+               <div class="panel-body">
+                 <label> Date de validité :</label> {{produit.validityDate | date }}
+               </div>
+               
+             </div>
+           </div>
+           </div>
+       </div>
